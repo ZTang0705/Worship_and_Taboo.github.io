@@ -1,0 +1,176 @@
+  /*整体*/
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  /*页面顶部*/
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
+  
+  /*顶部标题*/
+  header h1 {
+    margin: 0;
+  }
+  
+  /*导航栏*/
+  nav {
+    width: 100%;
+    height: 0;
+    position: sticky;
+    z-index: 999;
+    top: 1px;;
+    display: flex; /*使导航栏内容横向排布*/
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    width: 600px;
+    height: 100%;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    position: absolute;
+    right: 0%;
+  }
+  
+  nav li {
+    margin: 0 10px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    font-size:18px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+  }
+  
+  /*页面主要部分*/
+  main {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .exhibition {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /*展览画作（组）*/
+  .exhibition-cards{
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .exhibition-card:hover .exhibition-card-content {
+    transform: scaleY(1);
+  }
+
+  /*画作设置*/
+  .exhibition-card {
+    position: relative;
+    cursor: pointer;
+    border: 2px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 10px;
+    height: 250px;
+    padding-top: 200px;
+  }
+  
+  .exhibition-card-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  .exhibition-card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -2;
+  }
+  
+  .exhibition-card-text {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    color: black;
+    position: relative;
+    z-index: -1;
+  }
+  
+  .exhibition-card-text h2 {
+    margin: 50;
+  }
+  
+  .exhibition-card-text p {
+    margin: 5px 0;
+  }
+
+  /*画作背面图片及描述信息*/
+  .exhibition-card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+  }
+  
+  .exhibition-card-content img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .exhibition-card-content p {
+    width: 80%;
+    text-align: left;
+  }
+  
+  .exhibition-card:hover .exhibition-card-content,
+  .exhibition-card.expanded .exhibition-card-content {
+    transform: scaleY(1);
+  }
+    
+  /*页面底部*/
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
